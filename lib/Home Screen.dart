@@ -6,27 +6,26 @@ class CalculatorScreen extends StatelessWidget {
 
   Widget defaultButton(double paddingRatio, Color? buttonColor, double? radius,
           Widget child) =>
-      GestureDetector(
-        onTap: () {
-          print('Button Pressed + ${child}');
-        },
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: paddingRatio - 5),
-          child: CircleAvatar(
-            backgroundColor: buttonColor,
-            radius: radius,
-            child: child,
-          ),
+      Container(
+        width: 102,
+        decoration: BoxDecoration(),
+        child: CircleAvatar(
+          backgroundColor: buttonColor,
+          radius: radius,
+          child: child,
         ),
       );
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
+        backgroundColor: Colors.black,
         title: const Text(
           'Calculator app',
-          style: TextStyle(fontWeight: FontWeight.w800, fontSize: 25),
+          style: TextStyle(
+              fontWeight: FontWeight.w800, fontSize: 25, color: Colors.white),
         ),
         centerTitle: true,
       ),
@@ -39,10 +38,13 @@ class CalculatorScreen extends StatelessWidget {
               child: Container(
                 alignment: Alignment.bottomRight,
                 child: const Padding(
-                  padding: EdgeInsets.all(25.0),
+                  padding: EdgeInsets.all(38.0),
                   child: Text(
                     '000000000',
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
+                    style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white),
                   ),
                 ),
               ),
@@ -58,31 +60,31 @@ class CalculatorScreen extends StatelessWidget {
                     defaultButton(
                         15,
                         Colors.grey,
-                        40,
+                        43,
                         const Text(
                           'Delete',
                           style: TextStyle(
-                              fontWeight: FontWeight.w700, fontSize: 25),
+                              fontWeight: FontWeight.w700, fontSize: 23),
                         )),
                     defaultButton(
                         15,
                         Colors.grey,
-                        40,
+                        43,
                         const Text(
                           'Clear',
                           style: TextStyle(
-                              fontWeight: FontWeight.w700, fontSize: 25),
+                              fontWeight: FontWeight.w700, fontSize: 23),
                         )),
                     defaultButton(
                         15,
                         Colors.orange,
-                        40,
+                        43,
                         const Icon(
                           Icons.percent,
-                          size: 40,
+                          size: 43,
                         )),
-                    defaultButton(15, Colors.orange, 40,
-                        const Icon(Icons.close, size: 40)),
+                    defaultButton(15, Colors.orange, 43,
+                        const Icon(Icons.close, size: 43)),
                   ],
                 ),
                 const SizedBox(
@@ -93,32 +95,32 @@ class CalculatorScreen extends StatelessWidget {
                     defaultButton(
                         15,
                         Colors.grey,
-                        40,
+                        43,
                         const Text(
                           '7',
                           style: TextStyle(
-                              fontWeight: FontWeight.w700, fontSize: 25),
+                              fontWeight: FontWeight.w700, fontSize: 38),
                         )),
                     defaultButton(
                         15,
                         Colors.grey,
-                        40,
+                        43,
                         const Text(
                           '8',
                           style: TextStyle(
-                              fontWeight: FontWeight.w700, fontSize: 25),
+                              fontWeight: FontWeight.w700, fontSize: 38),
                         )),
                     defaultButton(
                         15,
                         Colors.grey,
-                        40,
+                        43,
                         const Text(
                           '9',
                           style: TextStyle(
-                              fontWeight: FontWeight.w700, fontSize: 25),
+                              fontWeight: FontWeight.w700, fontSize: 38),
                         )),
-                    defaultButton(15, Colors.orange, 40,
-                        const Icon(CupertinoIcons.divide, size: 40)),
+                    defaultButton(15, Colors.orange, 43,
+                        const Icon(CupertinoIcons.divide, size: 43)),
                   ],
                 ),
                 const SizedBox(
@@ -129,32 +131,32 @@ class CalculatorScreen extends StatelessWidget {
                     defaultButton(
                         15,
                         Colors.grey,
-                        40,
+                        43,
                         const Text(
                           '6',
                           style: TextStyle(
-                              fontWeight: FontWeight.w700, fontSize: 25),
+                              fontWeight: FontWeight.w700, fontSize: 38),
                         )),
                     defaultButton(
                         15,
                         Colors.grey,
-                        40,
+                        43,
                         const Text(
                           '5',
                           style: TextStyle(
-                              fontWeight: FontWeight.w700, fontSize: 25),
+                              fontWeight: FontWeight.w700, fontSize: 38),
                         )),
                     defaultButton(
                         15,
                         Colors.grey,
-                        40,
+                        43,
                         const Text(
                           '4',
                           style: TextStyle(
-                              fontWeight: FontWeight.w700, fontSize: 25),
+                              fontWeight: FontWeight.w700, fontSize: 38),
                         )),
-                    defaultButton(15, Colors.grey, 40,
-                        const Icon(CupertinoIcons.minus, size: 40)),
+                    defaultButton(15, Colors.grey, 43,
+                        const Icon(CupertinoIcons.minus, size: 43)),
                   ],
                 ),
                 const SizedBox(
@@ -165,32 +167,32 @@ class CalculatorScreen extends StatelessWidget {
                     defaultButton(
                         15,
                         Colors.grey,
-                        40,
+                        43,
                         const Text(
                           '3',
                           style: TextStyle(
-                              fontWeight: FontWeight.w700, fontSize: 25),
+                              fontWeight: FontWeight.w700, fontSize: 38),
                         )),
                     defaultButton(
                         15,
                         Colors.grey,
-                        40,
+                        43,
                         const Text(
                           '2',
                           style: TextStyle(
-                              fontWeight: FontWeight.w700, fontSize: 25),
+                              fontWeight: FontWeight.w700, fontSize: 38),
                         )),
                     defaultButton(
                         15,
                         Colors.grey,
-                        40,
+                        43,
                         const Text(
                           '1',
                           style: TextStyle(
-                              fontWeight: FontWeight.w700, fontSize: 25),
+                              fontWeight: FontWeight.w700, fontSize: 38),
                         )),
                     defaultButton(
-                        15, Colors.grey, 40, const Icon(Icons.add, size: 40)),
+                        15, Colors.grey, 43, const Icon(Icons.add, size: 43)),
                   ],
                 ),
                 const SizedBox(
@@ -198,26 +200,33 @@ class CalculatorScreen extends StatelessWidget {
                 ),
                 Row(
                   children: [
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(43),
+                            color: Colors.grey),
+                        child: defaultButton(
+                            15,
+                            Colors.grey,
+                            43,
+                            const Text(
+                              '0',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w700, fontSize: 38),
+                            )),
+                      ),
+                    ),
                     defaultButton(
                         15,
                         Colors.grey,
-                        40,
-                        const Text(
-                          '0',
-                          style: TextStyle(
-                              fontWeight: FontWeight.w700, fontSize: 25),
-                        )),
-                    defaultButton(
-                        15,
-                        Colors.grey,
-                        40,
+                        43,
                         const Text(
                           '.',
                           style: TextStyle(
-                              fontWeight: FontWeight.w700, fontSize: 25),
+                              fontWeight: FontWeight.w700, fontSize: 38),
                         )),
-                    defaultButton(15, Colors.grey, 40,
-                        const Icon(CupertinoIcons.equal, size: 40)),
+                    defaultButton(15, Colors.grey, 43,
+                        const Icon(CupertinoIcons.equal, size: 43)),
                   ],
                 ),
               ],
