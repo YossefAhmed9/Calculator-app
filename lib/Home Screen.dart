@@ -1,8 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CalculatorScreen extends StatelessWidget {
+class CalculatorScreen extends StatefulWidget {
   const CalculatorScreen({super.key});
+
+  @override
+  State<CalculatorScreen> createState() => _CalculatorScreenState();
+}
+
+class _CalculatorScreenState extends State<CalculatorScreen> {
+  String fNumber = '0';
+  String sNumber = '0';
+  String operand = '+'; // + or - or * or /
 
   Widget defaultButton(double paddingRatio, Color? buttonColor, double? radius,
           Widget child) =>
@@ -37,10 +46,10 @@ class CalculatorScreen extends StatelessWidget {
             child: SingleChildScrollView(
               child: Container(
                 alignment: Alignment.bottomRight,
-                child: const Padding(
+                child: Padding(
                   padding: EdgeInsets.all(38.0),
                   child: Text(
-                    '000000000',
+                    '$fNumber $operand $sNumber ',
                     style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.w400,
