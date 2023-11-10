@@ -43,20 +43,44 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
         children: [
           Expanded(
             flex: 2,
-            child: SingleChildScrollView(
-              child: Container(
-                alignment: Alignment.bottomRight,
-                child: Padding(
-                  padding: EdgeInsets.all(38.0),
-                  child: Text(
-                    '$fNumber $operand $sNumber ',
-                    style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.white),
+            child: Column(
+              children: [
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Container(
+                      alignment: Alignment.bottomRight,
+                      child: Padding(
+                        padding: EdgeInsets.all(38.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Text(
+                              '10',
+                              style: TextStyle(
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ),
                 ),
-              ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      '$fNumber $operand $sNumber ',
+                      style: const TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.white),
+                    ),
+                  ],
+                )
+              ],
             ),
           ),
           Expanded(
